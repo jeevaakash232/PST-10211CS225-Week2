@@ -1,0 +1,28 @@
+import java.util.*;
+public class Main{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        String input=sc.nextLine();
+        String[] parts=input.split(",");
+        String str1=parts[0].replaceAll(" ","");
+        String str2=parts[1].replaceAll(" ","");
+        Set<Character> set1=new HashSet<>();
+        Set<Character> result=new TreeSet<>();
+        for(char c:str1.toCharArray()){
+            set1.add(c);
+        }
+        for(char c:str2.toCharArray()){
+            if(set1.contains(c)){
+                result.add(c);
+            }
+        }
+        if(result.isEmpty()){
+            System.out.println("none");
+        }
+        else{
+            for(char c:result){
+                System.out.println(c);
+            }
+        }
+    }
+}
