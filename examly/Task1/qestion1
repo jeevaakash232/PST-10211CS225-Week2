@@ -1,0 +1,16 @@
+class X{
+    
+    static int fact(int n){
+               int fact=0;
+            for(int i=1;i<=n;i++){
+                fact*=i;
+            }
+            return fact;
+      }
+
+public static void main(String s[]){
+    int n = new java.util.Scanner(System.in).nextInt();
+    System.out.println(fact(n));
+    }
+}
+    
