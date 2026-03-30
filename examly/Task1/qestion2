@@ -1,0 +1,11 @@
+class NaturalNumbers{
+    
+    static int sumOfNumbers(int n){
+                return (n*(n+1))/2;
+     }
+
+public static void main(String s[]){
+    int n = new java.util.Scanner(System.in).nextInt();
+    System.out.println(sumOfNumbers(n));
+    }
+}
