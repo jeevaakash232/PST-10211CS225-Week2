@@ -1,0 +1,47 @@
+import java.util.*;
+
+public class Main {
+    
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String input = sc.nextLine();
+        
+        String result = commonVowels(input);
+        
+        System.out.print(result);
+    }
+    
+    public static String commonVowels(String input) {
+
+        input = input.replace(" ", "");
+        
+        String[] words = input.split(",");
+        String word1 = words[0];
+        String word2 = words[1];
+        
+        String vowels = "aeiouAEIOU";
+        
+        Set<Character> set1 = new HashSet<>();
+        Set<Character> resultSet = new TreeSet<>(); 
+        
+        for (char c : word1.toCharArray()) {
+            if (vowels.indexOf(c) != -1) {
+                set1.add(c);
+            }
+        }
+        
+        for (char c : word2.toCharArray()) {
+            if (vowels.indexOf(c) != -1 && set1.contains(c)) {
+                resultSet.add(c);
+            }
+        }
+        
+
+        StringBuilder result = new StringBuilder();
+        for (char c : resultSet) {
+            result.append(c);
+        }
+        
+        return result.toString(); 
+    }
+}
