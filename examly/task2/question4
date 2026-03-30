@@ -1,0 +1,29 @@
+import java.util.*;
+public class Main{
+    public static String findMaxSpecialty(String list){
+        int pCount=0,oCount=0,eCount=0;
+        String[] arr=list.split(",");
+        for(int i=1;i<arr.length;i+=2){
+            String code=arr[i].trim();
+            if(arr[i].equals("p"))
+                pCount++;
+            else if (arr[i].equals("O"))
+                oCount++;
+            else if (arr[i].equals("E"))
+                eCount++;
+        }
+        if(pCount>=oCount&&pCount>=eCount)
+            return "Padiatrics";
+        else if (oCount>pCount&&oCount>eCount)
+            return "Orthopedics";
+        else
+            return "ENT";
+            
+    }
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        String list=sc.nextLine();
+        System.out.print(findMaxSpecialty(list));
+        sc.close();
+    }
+}
