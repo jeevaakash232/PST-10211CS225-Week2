@@ -1,0 +1,21 @@
+class SumDigitsFactorial{
+    
+    static int fact(int number){
+        int sum=0;
+            while(number>0){
+                sum+=number%10;
+                number/=10;
+            }
+            int factorial=1;
+            for(int i=1;i<=sum;i++){
+                factorial*=i;
+            }
+            return factorial;
+      }
+
+public static void main(String s[]){
+    int n = new java.util.Scanner(System.in).nextInt();
+    System.out.println(fact(n));
+    }
+}
+    

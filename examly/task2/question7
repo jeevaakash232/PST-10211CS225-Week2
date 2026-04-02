@@ -1,0 +1,43 @@
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String input = sc.nextLine();
+        
+        System.out.print(translate(input));
+    }
+
+    public static String translate(String input) {
+      
+        Map<String, String> dict = new HashMap<>();
+        dict.put("merry", "god");
+        dict.put("christmas", "jul");
+        dict.put("and", "och");
+        dict.put("happy", "gott");
+        dict.put("new", "nytt");
+        dict.put("year", "ar");
+
+        input = input.replace(" ", "");
+
+
+        String[] words = input.split(",");
+
+        StringBuilder result = new StringBuilder();
+
+        for (int i = 0; i < words.length; i++) {
+            String translated = dict.get(words[i]);
+            
+            if (translated != null) {
+                result.append(translated);
+            }
+
+            if (i < words.length - 1) {
+                result.append(",");
+            }
+        }
+
+        return result.toString();
+    }
+}

@@ -1,0 +1,16 @@
+import java.util.*; 
+
+class AddTwoNumbers{
+    
+    static int add(int n1, int n2){
+              return n1+n2;
+       }
+
+   public static void main(String s[]){
+        Scanner scan = new Scanner(System.in);
+        int n1 = scan.nextInt();
+        int n2 = scan.nextInt();
+        System.out.println(add(n1, n2));
+   }
+}
+    

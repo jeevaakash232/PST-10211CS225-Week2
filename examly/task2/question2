@@ -1,0 +1,29 @@
+import java.util.*;
+public class Main{
+    public static long factorial(int n){
+        long fact=1;
+        for(int i=1;i<=n;i++){
+            fact*=i;
+        }
+        return fact;
+    }
+    public static long getFactorialOfMaxCount(String str){
+        int[] freq=new int[256];
+        for(int i=0;i<str.length();i++){
+            freq[str.charAt(i)]++;
+        }
+        int max=0;
+        for(int i=0;i<256;i++){
+            if(freq[i]>max){
+                max=freq[i];
+            }
+        }
+        return factorial(max);
+    }
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        String input=sc.next();
+        System.out.print(getFactorialOfMaxCount(input));
+        sc.close();
+    }
+}
